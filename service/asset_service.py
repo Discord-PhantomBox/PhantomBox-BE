@@ -4,7 +4,7 @@ from model.label_model import TextRequest
 from util import llm_util, s3_util
 import asyncio
 
-with open("./asset_metadata.json", "r", encoding="utf-8") as f:
+with open("./assets.json", "r", encoding="utf-8") as f:
     ASSET_METADATA = json.load(f)
 
 
