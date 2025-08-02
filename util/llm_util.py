@@ -2,6 +2,10 @@ import asyncio
 import json
 import os
 from pathlib import Path
+from langchain.globals import set_llm_cache
+from langchain.cache import InMemoryCache
+
+set_llm_cache(InMemoryCache())
 
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
