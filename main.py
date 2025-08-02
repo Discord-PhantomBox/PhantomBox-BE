@@ -59,10 +59,10 @@ async def label(label_request : TextRequest):
     labeled_response = await label_service.labeling(label_request)
     return labeled_response
 
-# @app.post("/asset/{label-id}")
-# async def asset(label_id: int, asset_request : TextRequest):
-#     assets_response = await asset_service.select(label_id, asset_request)
-#     return assets_response
+@app.post("/asset/{label_id}")
+async def asset(label_id: int, asset_request : TextRequest):
+    assets_response = await asset_service.select(label_id, asset_request)
+    return assets_response
 
 if __name__ == "__main__":
     import uvicorn
