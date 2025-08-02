@@ -41,4 +41,4 @@ class MySQLDAO:
         finally:
             conn.close()
 
-mysql_dao = MySQLDAO('localhost', 'root', 'kdoornega0128', 'hiton', 3306)
+mysql_dao = MySQLDAO('svc.sel5.cloudtype.app:32387', 'root', 'kdoornega0128', 'hiton', 3306)
