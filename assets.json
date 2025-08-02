@@ -22,5 +22,25 @@
   "watchman_of_doom_shield": {
     "title": "파멸의 수호자 방패",
     "description": "절망과 종말의 시대를 지키는 마지막 방패를 의미합니다."
+  },
+  "paper_set" : {
+    "title": "바닥에 떨어진 종이",
+    "description": "배신한 사람에 대한 미련"
+  },
+  "old_rustic_wooden_chair_-_game_ready_pbr_asset" : {
+    "title" : "의자",
+    "description": "배신에 대한 분노"
+  },
+  "knife_and_cutting_board" : {
+    "title" : "칼과 도마",
+    "description": "일상적인 도구가 위협적으로 느껴지며, 스스로에게 상처를 입힐지도 모른다는 두려움. 자기 파괴적인 충동"
+  },
+  "medieval_metal_dishes" : {
+    "title" : "밀려있는 설거지",
+    "description": "해야 할 일이 쌓여있는 싱크대. 미루고 싶은 현실과 쌓여있는 책임감에 대한 압박"
+  },
+  "quartz_table_clock" : {
+    "title" : "탁자에 놓여있는 더이상 움직이지 않는 시계",
+    "description": "시간이 흘러가지 않는 듯한 느낌은 세상과 동떨어져 홀로 갇혀 있는 듯한 고립감을 극대화합니다. 멈춘 시계를 만지며 시간을 되돌리거나 다시 움직이게 하고 싶다는 무력한 소망(다시 예전으로 돌아가고 싶다는 마음)"
   }
 }
