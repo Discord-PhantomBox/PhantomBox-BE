@@ -1,6 +1,5 @@
-from urllib.request import Request
 
-from fastapi import APIRouter, Response
+from fastapi import APIRouter, Response, Request
 
 from service import auth_service
 
