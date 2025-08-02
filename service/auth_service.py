@@ -9,8 +9,6 @@ from util import jwt_util
 from model.auth_model import GoogleUrlResponse
 from dao.mysql_dao import mysql_dao
 
-load_dotenv()
-
 REDIRECT_URI = "https://port-0-phantombox-bee-mdufv0lp75f82a74.sel5.cloudtype.app/auth/login/google/callback"
 client_config = {
     "web": {
