@@ -11,7 +11,7 @@ from dao.mysql_dao import mysql_dao
 
 load_dotenv()
 
-REDIRECT_URI = "https://a08377b5e54d.ngrok-free.app/auth/login/google/callback"
+REDIRECT_URI = "https://port-0-phantombox-bee-mdufv0lp75f82a74.sel5.cloudtype.app/auth/login/google/callback"
 client_config = {
     "web": {
         "client_id": os.getenv("CLIENT_ID"),
