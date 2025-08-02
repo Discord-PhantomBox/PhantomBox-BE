@@ -12,7 +12,7 @@ load_dotenv()
 #
 # asset_list_str = "\n".join(f"- {name}" for name in asset_dirs)
 
-with open("asset_metadata.json", "r", encoding="utf-8") as f:
+with open("assets.json", "r", encoding="utf-8") as f:
     asset_metadata = json.load(f)
 
 asset_dirs = list(asset_metadata.keys())
