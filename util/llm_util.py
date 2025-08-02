@@ -1,14 +1,24 @@
 import asyncio
+import json
+
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from dotenv import load_dotenv
 load_dotenv()
 
-with open("./assets.txt", "r", encoding="utf-8") as f:
-    asset_dirs = [line.strip().rstrip("/") for line in f if line.strip()]
+# with open("./assets.txt", "r", encoding="utf-8") as f:
+#     asset_dirs = [line.strip().rstrip("/") for line in f if line.strip()]
+#
+# asset_list_str = "\n".join(f"- {name}" for name in asset_dirs)
 
-asset_list_str = "\n".join(f"- {name}" for name in asset_dirs)
+with open("asset_metadata.json", "r", encoding="utf-8") as f:
+    asset_metadata = json.load(f)
+
+asset_dirs = list(asset_metadata.keys())
+
+asset_list_str = "\n".join(f"- {name}: {meta['title']}" for name, meta in asset_metadata.items())
+print(asset_list_str)
 
 prompt_template = """
 너는 3D 에셋 추천 어시스턴트야.

@@ -1,0 +1,26 @@
+{
+  "mirror_a": {
+    "title": "깨진 거울 - 자기혐오",
+    "description": "깨진 거울은 자기 혐오를 나타내며, 왜곡된 자아상을 상징합니다."
+  },
+  "medieval_water_tub": {
+    "title": "중세 목욕통 - 세속의 욕망",
+    "description": "물을 담는 목욕통은 씻김과 정화를 상징합니다."
+  },
+  "broken_mirror": {
+    "title": "깨진 거울 - 내면의 분열",
+    "description": "자아의 균열과 혼란스러운 내면 세계를 상징하는 오브젝트입니다."
+  },
+  "the_golden_skull": {
+    "title": "황금 해골 - 영광과 죽음",
+    "description": "부와 영광을 상징하는 동시에 죽음을 암시하는 해골 조형물입니다."
+  },
+  "the_knight_monsterup": {
+    "title": "몬스터 업 기사 - 왜곡된 정의",
+    "description": "괴수와 융합된 기사로, 정의의 변형과 타락을 상징합니다."
+  },
+  "watchman_of_doom_shield": {
+    "title": "파멸의 수호자 방패",
+    "description": "절망과 종말의 시대를 지키는 마지막 방패를 의미합니다."
+  }
+}

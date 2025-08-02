@@ -1,15 +1,32 @@
+import json
+
 from model.label_model import TextRequest
 from util import llm_util, s3_util
 import asyncio
+
+with open("./asset_metadata.json", "r", encoding="utf-8") as f:
+    ASSET_METADATA = json.load(f)
+
 
 async def select(label_id : int , asset_request : TextRequest):
     text = asset_request.text
     assets = await llm_util.select_assets(label_id, text)
     tasks = [s3_util.get_public_urls_for_folder(folder) for folder in assets]
     results = await asyncio.gather(*tasks)
+
     all_urls = [url for sublist in results for url in sublist]
-    response = await nest_file_structure(all_urls)
-    return response
+    structured_by_asset = await nest_file_structure(all_urls)
+
+    final_response = {}
+    for asset in assets:
+        final_response[asset] = {
+            "title": ASSET_METADATA.get(asset, {}).get("title", ""),
+            "description": ASSET_METADATA.get(asset, {}).get("description", ""),
+            "files": structured_by_asset.get(asset, {})
+        }
+
+    return final_response
+
 
 async def nest_file_structure(flat_list: list[dict]) -> dict:
     root = {}

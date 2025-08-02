@@ -64,6 +64,8 @@ async def asset(label_id: int, asset_request : TextRequest):
     assets_response = await asset_service.select(label_id, asset_request)
     return assets_response
 
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
