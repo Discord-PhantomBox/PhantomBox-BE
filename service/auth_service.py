@@ -28,8 +28,8 @@ SCOPES = ['openid',
 flow = Flow.from_client_config(client_config, scopes=SCOPES)
 flow.redirect_uri = REDIRECT_URI
 
-async def show_url() -> GoogleUrlResponse:
-    auth_url, _ = flow.authorization_url(prompt='consent', access_type='offline', include_granted_scopes='true')
+async def show_url(origin : str) -> GoogleUrlResponse:
+    auth_url, _ = flow.authorization_url(prompt='consent', access_type='offline', include_granted_scopes='true', state=origin)
     return GoogleUrlResponse(url=auth_url)
 
 
@@ -42,7 +42,7 @@ async def __saved_user(user_email, user_name):
 ACCESS_TOKEN = "access_token"
 REFRESH_TOKEN = "refresh_token"
 
-async def login(code : str) -> RedirectResponse:
+async def login(code : str, origin : str) -> RedirectResponse:
     flow.fetch_token(code=code)
     credentials = flow.credentials
     auth_req = google.auth.transport.requests.Request()
@@ -64,7 +64,7 @@ async def login(code : str) -> RedirectResponse:
     refresh_token = await jwt_util.create_token(token_info, REFRESH_TOKEN)
 
     redirect = RedirectResponse(
-        url=f"http://10.10.5.252:3000/login/success?access_token={access_token}"
+        url=f"{origin}/login/success?access_token={access_token}"
     )
     print(f"access_token : {access_token}")
     redirect.set_cookie("refresh_token", refresh_token)
