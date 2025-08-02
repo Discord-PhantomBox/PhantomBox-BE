@@ -1,5 +1,6 @@
 import asyncio
 import json
+import os
 
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
@@ -11,8 +12,9 @@ load_dotenv()
 #     asset_dirs = [line.strip().rstrip("/") for line in f if line.strip()]
 #
 # asset_list_str = "\n".join(f"- {name}" for name in asset_dirs)
+file_path = os.path.join(os.path.dirname(__file__), "..", "assets.json")
 
-with open("assets.json", "r", encoding="utf-8") as f:
+with open(file_path, "r", encoding="utf-8") as f:
     asset_metadata = json.load(f)
 
 asset_dirs = list(asset_metadata.keys())

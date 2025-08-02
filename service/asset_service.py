@@ -1,10 +1,11 @@
 import json
+import os
 
 from model.label_model import TextRequest
 from util import llm_util, s3_util
 import asyncio
-
-with open("./assets.json", "r", encoding="utf-8") as f:
+file_path = os.path.join(os.path.dirname(__file__), "..", "assets.json")
+with open(file_path, "r", encoding="utf-8") as f:
     ASSET_METADATA = json.load(f)
 
 
