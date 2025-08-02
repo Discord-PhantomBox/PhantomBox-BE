@@ -34,8 +34,13 @@ async def show_url(origin : str) -> GoogleUrlResponse:
 
 
 async def __saved_user(user_email, user_name):
-    sql = "insert into user(name, email) values (%s, %s)"
-    user_id = mysql_dao.execute_update(sql, (user_name, user_email))
+    sql_select = "SELECT user_id FROM user WHERE email = %s"
+    existing_user = mysql_dao.execute_query_one(sql_select, (user_email,))
+    if existing_user:
+        return existing_user['user_id']
+
+    sql_insert = "INSERT INTO user(name, email) VALUES (%s, %s)"
+    user_id = mysql_dao.execute_update(sql_insert, (user_name, user_email))
     return user_id
 
 
