@@ -1,5 +1,5 @@
 import json
-import os
+
 from pathlib import Path
 
 from model.label_model import TextRequest
