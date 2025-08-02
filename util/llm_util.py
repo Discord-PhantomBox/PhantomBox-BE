@@ -19,7 +19,7 @@ prompt_template = """
 감정 상태: {emotion}
 설명: {text}
 
-위 목록 중 가장 적절한 에셋 폴더명을 골라서,
+위 목록 중 적절한 에셋 폴더명들을 골라서,
 쉼표로 구분된 형태로 출력해줘.
 예) medieval_water_tub, mirror_a
 """
